@@ -1,242 +1,261 @@
 {
-    "format": "1shotwp-playbook-registry/1",
-    "updated": "2026-09-13T08:57:32+00:00",
-    "base_url": "https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/",
-    "public_key": "qCIGkqkcacCkIsyQyKdAuXWw9u5bFAKI4DGA4x4HxIw=",
-    "playbooks": [
-        {
-            "id": "seo-audit-pro",
-            "version": "1.0.0",
-            "name": "SEO audit (pro)",
-            "description": "Full SEO health check: which SEO plugin is live, sitemap reachable, per-post title/description quality on the most important pages, and fixes applied only where the owner asked.",
-            "tags": [
-                "seo",
-                "audit",
-                "content"
-            ],
-            "license": "MIT",
-            "author": "1ShotWP",
-            "sha256": "833988accc39a7c8bfe92efcb02ac7929665a611d31683651806c935a1b5d863",
-            "signed": true,
-            "min_plugin": "1.6.0"
-        },
-        {
-            "id": "woo-catalog-audit",
-            "version": "1.0.0",
-            "name": "WooCommerce catalog audit",
-            "description": "Shop health: system status, product inventory and gaps, review queue, coupon usage sanity, out-of-stock list and order pipeline counts.",
-            "tags": [
-                "woocommerce",
-                "audit",
-                "shop"
-            ],
-            "license": "MIT",
-            "author": "1ShotWP",
-            "sha256": "b21ce0077f6851ec16902e42ce8fd39da3cfcda03eb78270ee13762e580d7c57",
-            "signed": true,
-            "min_plugin": "1.6.0"
-        },
-        {
-            "id": "woo-launch-check",
-            "version": "1.0.0",
-            "name": "WooCommerce first-sale readiness",
-            "description": "Pre-launch shop check: payment gateway live, shipping zone present, tax class sane, first product complete, welcome coupon tested, order pipeline dry-run.",
-            "tags": [
-                "woocommerce",
-                "launch",
-                "shop"
-            ],
-            "license": "MIT",
-            "author": "1ShotWP",
-            "sha256": "f0682c9978e4a980cb3749274451e44919886814b9fa8cde3a14bdcdfe3620a7",
-            "signed": true,
-            "min_plugin": "1.6.0"
-        },
-        {
-            "id": "email-deliverability",
-            "version": "1.0.0",
-            "name": "Email deliverability check",
-            "description": "Make transactional email trustworthy: admin email sanity, test message, plugin-based SMTP detection, notification inventory.",
-            "tags": [
-                "email",
-                "diagnostics"
-            ],
-            "license": "MIT",
-            "author": "1ShotWP",
-            "sha256": "cbb7056ac54eb4a819645fc1d1821abf1fffa5c19ac8f7df6ec0bdc93ab87792",
-            "signed": true,
-            "min_plugin": "1.6.0"
-        },
-        {
-            "id": "backup-drill",
-            "version": "1.0.0",
-            "name": "Backup drill",
-            "description": "Prove reversibility before you need it: snapshot, checkpoint, a reversible change, verify the journal, and rehearse the restore path.",
-            "tags": [
-                "backup",
-                "recovery",
-                "maintenance"
-            ],
-            "license": "MIT",
-            "author": "1ShotWP",
-            "sha256": "cc4ef21cd595d76dcbeaf30e3fd934ba97c3bac242dda3966c062f40282197ed",
-            "signed": true,
-            "min_plugin": "1.6.0"
-        },
-        {
-            "id": "staging-to-prod-content",
-            "version": "1.0.0",
-            "name": "Staging to production content promotion",
-            "description": "Promote reviewed content changes: verify the production snapshot, apply the agreed edits, sweep dev URLs out, and keep the journal as the rollback path.",
-            "tags": [
-                "deployment",
-                "content"
-            ],
-            "license": "MIT",
-            "author": "1ShotWP",
-            "sha256": "9d1da5538059762764701c8024424710df4520db57c0adef9fd8e8fc305fe12a",
-            "signed": true,
-            "min_plugin": "1.6.0"
-        },
-        {
-            "id": "accessibility-pass",
-            "version": "1.0.0",
-            "name": "Accessibility pass",
-            "description": "A practical a11y baseline: global styles contrast review, image alt-text coverage, heading structure spot-check on key pages, and safe fixes.",
-            "tags": [
-                "accessibility",
-                "content",
-                "media"
-            ],
-            "license": "MIT",
-            "author": "1ShotWP",
-            "sha256": "80bb19cd07273eb871df054f52847bffe8342ee0d82936f14815962f6a9a3448",
-            "signed": true,
-            "min_plugin": "1.6.0"
-        },
-        {
-            "id": "content-refresh",
-            "version": "1.0.0",
-            "name": "Stale content refresh",
-            "description": "Find the oldest still-relevant published posts, refresh facts and dates where safe, and leave an audit trail via a checkpoint before writing.",
-            "tags": [
-                "content",
-                "maintenance"
-            ],
-            "license": "MIT",
-            "author": "1ShotWP",
-            "sha256": "d88a22ecd4569ce53175b380c927cba0c590fd155089ec8dcc74aa47ae6c3c4b",
-            "signed": true,
-            "min_plugin": "1.6.0"
-        },
-        {
-            "id": "gdpr-privacy-pass",
-            "version": "1.0.0",
-            "name": "GDPR / privacy pass",
-            "description": "Privacy baseline: privacy policy page present, comment settings conservative, user inventory, and a moderation sweep of pending items.",
-            "tags": [
-                "privacy",
-                "compliance",
-                "comments"
-            ],
-            "license": "MIT",
-            "author": "1ShotWP",
-            "sha256": "39a2a841c9c03e9fc9adc4fba6ceb73e1461fbf82d0bf648789d9265bf116361",
-            "signed": true,
-            "min_plugin": "1.6.0"
-        },
-        {
-            "id": "speed-pass",
-            "version": "1.0.0",
-            "name": "Speed pass",
-            "description": "Performance hygiene without third-party claims: media sizes complete, unused media listed, transient garbage collected, cron queue sane, core/plugins up to date, Site Health clean.",
-            "tags": [
-                "performance",
-                "maintenance"
-            ],
-            "license": "MIT",
-            "author": "1ShotWP",
-            "sha256": "d71162b77d9033efd9875b3ccde33ca93d161347a5052f9c2b3e9e3432a975db",
-            "signed": true,
-            "min_plugin": "1.6.0"
-        },
-        {
-            "id": "comment-spam-purge",
-            "version": "1.0.0",
-            "name": "Comment spam purge",
-            "description": "Measure the spam backlog, purge it reversibly (spam flag, never hard delete), then harden the comment settings so the backlog does not rebuild.",
-            "tags": [
-                "comments",
-                "spam",
-                "maintenance"
-            ],
-            "license": "MIT",
-            "author": "1ShotWP",
-            "sha256": "c91ae836943c26b331231ad6db21b2116f268b36de06e8554370c6e57edc0129",
-            "signed": true,
-            "min_plugin": "1.6.0"
-        },
-        {
-            "id": "user-offboarding",
-            "version": "1.0.0",
-            "name": "User offboarding (safe)",
-            "description": "Remove a person's access without destroying their work: sessions killed, content reassigned, role downgraded or user deleted with explicit reassignment targets.",
-            "tags": [
-                "users",
-                "security"
-            ],
-            "license": "MIT",
-            "author": "1ShotWP",
-            "sha256": "bd063481caf3920fe38028c457272b0d7f2deeaab9df7678562aa69625b90202",
-            "signed": true,
-            "min_plugin": "1.6.0"
-        },
-        {
-            "id": "broken-links-sweep",
-            "version": "1.0.0",
-            "name": "Broken links sweep",
-            "description": "Scan for broken links, fix internal ones in place, and add 301 redirects for moved URLs instead of editing external targets.",
-            "tags": [
-                "content",
-                "seo",
-                "links"
-            ],
-            "license": "MIT",
-            "author": "1ShotWP",
-            "sha256": "6e88e6597869e2ebf67f78661f037b86fc8f00c5d03544ca01d99119af6690c7",
-            "signed": true,
-            "min_plugin": "1.6.0"
-        },
-        {
-            "id": "plugin-vulnerability-triage",
-            "version": "1.0.0",
-            "name": "Plugin vulnerability triage",
-            "description": "Inventory every installed plugin, flag abandoned or inactive ones, apply pending updates with a checkpoint, and probe for conflicts after updating.",
-            "tags": [
-                "security",
-                "plugins",
-                "maintenance"
-            ],
-            "license": "MIT",
-            "author": "1ShotWP",
-            "sha256": "e4254a389027b56a538f9a15c739097b306012348ede4d0ff9cf0b3b3e6f6ffc",
-            "signed": true,
-            "min_plugin": "1.6.0"
-        },
-        {
-            "id": "multilang-setup",
-            "version": "1.0.0",
-            "name": "Multilingual starter",
-            "description": "Prepare a site for two languages: language inventory, per-post language assignment, translation linking, and a duplicated menu structure check.",
-            "tags": [
-                "i18n",
-                "content"
-            ],
-            "license": "MIT",
-            "author": "1ShotWP",
-            "sha256": "750e9281245e059b43ef1fec24bcb5b50d3626abbc77c3d9eb3c4fb47ad4d6be",
-            "signed": true,
-            "min_plugin": "1.6.0"
-        }
-    ]
+  "format": "1shotwp-playbook-registry/1",
+  "updated": "2026-09-13T00:00:00Z",
+  "base_url": "https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/",
+  "public_key": "qCIGkqkcacCkIsyQyKdAuXWw9u5bFAKI4DGA4x4HxIw=",
+  "playbooks": [
+    {
+      "id": "seo-audit-pro",
+      "version": "1.0.0",
+      "name": "SEO audit (pro)",
+      "description": "Full SEO health check: which SEO plugin is live, sitemap reachable, per-post title/description quality on the most important pages, and fixes applied only where the owner asked.",
+      "tags": [
+        "seo",
+        "audit",
+        "content"
+      ],
+      "license": "MIT",
+      "author": "1ShotWP",
+      "sha256": "833988accc39a7c8bfe92efcb02ac7929665a611d31683651806c935a1b5d863",
+      "signed": true,
+      "min_plugin": "1.6.0",
+      "key_id": "k1"
+    },
+    {
+      "id": "woo-catalog-audit",
+      "version": "1.0.0",
+      "name": "WooCommerce catalog audit",
+      "description": "Shop health: system status, product inventory and gaps, review queue, coupon usage sanity, out-of-stock list and order pipeline counts.",
+      "tags": [
+        "woocommerce",
+        "audit",
+        "shop"
+      ],
+      "license": "MIT",
+      "author": "1ShotWP",
+      "sha256": "b21ce0077f6851ec16902e42ce8fd39da3cfcda03eb78270ee13762e580d7c57",
+      "signed": true,
+      "min_plugin": "1.6.0",
+      "key_id": "k1"
+    },
+    {
+      "id": "woo-launch-check",
+      "version": "1.0.0",
+      "name": "WooCommerce first-sale readiness",
+      "description": "Pre-launch shop check: payment gateway live, shipping zone present, tax class sane, first product complete, welcome coupon tested, order pipeline dry-run.",
+      "tags": [
+        "woocommerce",
+        "launch",
+        "shop"
+      ],
+      "license": "MIT",
+      "author": "1ShotWP",
+      "sha256": "f0682c9978e4a980cb3749274451e44919886814b9fa8cde3a14bdcdfe3620a7",
+      "signed": true,
+      "min_plugin": "1.6.0",
+      "key_id": "k1"
+    },
+    {
+      "id": "email-deliverability",
+      "version": "1.0.0",
+      "name": "Email deliverability check",
+      "description": "Make transactional email trustworthy: admin email sanity, test message, plugin-based SMTP detection, notification inventory.",
+      "tags": [
+        "email",
+        "diagnostics"
+      ],
+      "license": "MIT",
+      "author": "1ShotWP",
+      "sha256": "cbb7056ac54eb4a819645fc1d1821abf1fffa5c19ac8f7df6ec0bdc93ab87792",
+      "signed": true,
+      "min_plugin": "1.6.0",
+      "key_id": "k1"
+    },
+    {
+      "id": "backup-drill",
+      "version": "1.0.0",
+      "name": "Backup drill",
+      "description": "Prove reversibility before you need it: snapshot, checkpoint, a reversible change, verify the journal, and rehearse the restore path.",
+      "tags": [
+        "backup",
+        "recovery",
+        "maintenance"
+      ],
+      "license": "MIT",
+      "author": "1ShotWP",
+      "sha256": "cc4ef21cd595d76dcbeaf30e3fd934ba97c3bac242dda3966c062f40282197ed",
+      "signed": true,
+      "min_plugin": "1.6.0",
+      "key_id": "k1"
+    },
+    {
+      "id": "staging-to-prod-content",
+      "version": "1.0.0",
+      "name": "Staging to production content promotion",
+      "description": "Promote reviewed content changes: verify the production snapshot, apply the agreed edits, sweep dev URLs out, and keep the journal as the rollback path.",
+      "tags": [
+        "deployment",
+        "content"
+      ],
+      "license": "MIT",
+      "author": "1ShotWP",
+      "sha256": "9d1da5538059762764701c8024424710df4520db57c0adef9fd8e8fc305fe12a",
+      "signed": true,
+      "min_plugin": "1.6.0",
+      "key_id": "k1"
+    },
+    {
+      "id": "accessibility-pass",
+      "version": "1.0.0",
+      "name": "Accessibility pass",
+      "description": "A practical a11y baseline: global styles contrast review, image alt-text coverage, heading structure spot-check on key pages, and safe fixes.",
+      "tags": [
+        "accessibility",
+        "content",
+        "media"
+      ],
+      "license": "MIT",
+      "author": "1ShotWP",
+      "sha256": "80bb19cd07273eb871df054f52847bffe8342ee0d82936f14815962f6a9a3448",
+      "signed": true,
+      "min_plugin": "1.6.0",
+      "key_id": "k1"
+    },
+    {
+      "id": "content-refresh",
+      "version": "1.0.0",
+      "name": "Stale content refresh",
+      "description": "Find the oldest still-relevant published posts, refresh facts and dates where safe, and leave an audit trail via a checkpoint before writing.",
+      "tags": [
+        "content",
+        "maintenance"
+      ],
+      "license": "MIT",
+      "author": "1ShotWP",
+      "sha256": "d88a22ecd4569ce53175b380c927cba0c590fd155089ec8dcc74aa47ae6c3c4b",
+      "signed": true,
+      "min_plugin": "1.6.0",
+      "key_id": "k1"
+    },
+    {
+      "id": "gdpr-privacy-pass",
+      "version": "1.0.0",
+      "name": "GDPR / privacy pass",
+      "description": "Privacy baseline: privacy policy page present, comment settings conservative, user inventory, and a moderation sweep of pending items.",
+      "tags": [
+        "privacy",
+        "compliance",
+        "comments"
+      ],
+      "license": "MIT",
+      "author": "1ShotWP",
+      "sha256": "39a2a841c9c03e9fc9adc4fba6ceb73e1461fbf82d0bf648789d9265bf116361",
+      "signed": true,
+      "min_plugin": "1.6.0",
+      "key_id": "k1"
+    },
+    {
+      "id": "speed-pass",
+      "version": "1.0.0",
+      "name": "Speed pass",
+      "description": "Performance hygiene without third-party claims: media sizes complete, unused media listed, transient garbage collected, cron queue sane, core/plugins up to date, Site Health clean.",
+      "tags": [
+        "performance",
+        "maintenance"
+      ],
+      "license": "MIT",
+      "author": "1ShotWP",
+      "sha256": "d71162b77d9033efd9875b3ccde33ca93d161347a5052f9c2b3e9e3432a975db",
+      "signed": true,
+      "min_plugin": "1.6.0",
+      "key_id": "k1"
+    },
+    {
+      "id": "comment-spam-purge",
+      "version": "1.0.0",
+      "name": "Comment spam purge",
+      "description": "Measure the spam backlog, purge it reversibly (spam flag, never hard delete), then harden the comment settings so the backlog does not rebuild.",
+      "tags": [
+        "comments",
+        "spam",
+        "maintenance"
+      ],
+      "license": "MIT",
+      "author": "1ShotWP",
+      "sha256": "c91ae836943c26b331231ad6db21b2116f268b36de06e8554370c6e57edc0129",
+      "signed": true,
+      "min_plugin": "1.6.0",
+      "key_id": "k1"
+    },
+    {
+      "id": "user-offboarding",
+      "version": "1.0.0",
+      "name": "User offboarding (safe)",
+      "description": "Remove a person's access without destroying their work: sessions killed, content reassigned, role downgraded or user deleted with explicit reassignment targets.",
+      "tags": [
+        "users",
+        "security"
+      ],
+      "license": "MIT",
+      "author": "1ShotWP",
+      "sha256": "bd063481caf3920fe38028c457272b0d7f2deeaab9df7678562aa69625b90202",
+      "signed": true,
+      "min_plugin": "1.6.0",
+      "key_id": "k1"
+    },
+    {
+      "id": "broken-links-sweep",
+      "version": "1.0.0",
+      "name": "Broken links sweep",
+      "description": "Scan for broken links, fix internal ones in place, and add 301 redirects for moved URLs instead of editing external targets.",
+      "tags": [
+        "content",
+        "seo",
+        "links"
+      ],
+      "license": "MIT",
+      "author": "1ShotWP",
+      "sha256": "6e88e6597869e2ebf67f78661f037b86fc8f00c5d03544ca01d99119af6690c7",
+      "signed": true,
+      "min_plugin": "1.6.0",
+      "key_id": "k1"
+    },
+    {
+      "id": "plugin-vulnerability-triage",
+      "version": "1.0.0",
+      "name": "Plugin vulnerability triage",
+      "description": "Inventory every installed plugin, flag abandoned or inactive ones, apply pending updates with a checkpoint, and probe for conflicts after updating.",
+      "tags": [
+        "security",
+        "plugins",
+        "maintenance"
+      ],
+      "license": "MIT",
+      "author": "1ShotWP",
+      "sha256": "e4254a389027b56a538f9a15c739097b306012348ede4d0ff9cf0b3b3e6f6ffc",
+      "signed": true,
+      "min_plugin": "1.6.0",
+      "key_id": "k1"
+    },
+    {
+      "id": "multilang-setup",
+      "version": "1.0.0",
+      "name": "Multilingual starter",
+      "description": "Prepare a site for two languages: language inventory, per-post language assignment, translation linking, and a duplicated menu structure check.",
+      "tags": [
+        "i18n",
+        "content"
+      ],
+      "license": "MIT",
+      "author": "1ShotWP",
+      "sha256": "750e9281245e059b43ef1fec24bcb5b50d3626abbc77c3d9eb3c4fb47ad4d6be",
+      "signed": true,
+      "min_plugin": "1.6.0",
+      "key_id": "k1"
+    }
+  ],
+  "public_keys": {
+    "k1": "qCIGkqkcacCkIsyQyKdAuXWw9u5bFAKI4DGA4x4HxIw=",
+    "k2": "zXYgBMIl64AmLYv3OMbpEM9tkinIJ3+0PPIKocg2xIU="
+  }
 }

@@ -56,12 +56,23 @@ playbook that names a tool a site does not have cannot be installed there, whate
 ## Signatures and trust tiers
 
 - **Official playbooks** carry a detached Ed25519 signature over their canonical form,
-  verified against the publisher key pinned in the plugin (`keys/`). They are marked
-  `"signed": true`.
+  verified against the publisher keys pinned in the plugin (the public halves live in
+  `keys/` — PUBLIC material only, private keys never touch this repository). They are
+  marked `"signed": true` and carry a `key_id` naming the signing generation.
 - **Community submissions** land unsigned with `"signed": false` — still sha256-pinned,
   still CI-validated, still installable; the skills channel shows them as
-  `verified=false`. The maintainer may promote + sign a well-established community
-  playbook later.
+  `verified=false`.
+- **Key generations**: `k1` is the launch key (its private half was lost in a
+  maintainer-environment reset — the 15 launch playbooks keep their valid signatures
+  against the pinned public half); `k2` is the active signing generation since
+  1ShotWP 1.6.2 "Zecca" and signs every NEW official playbook.
+- **Official promotion flow**: when a well-established community playbook deserves the
+  official badge, the maintainer validates it once more and signs it with the active
+  generation (`php promote-playbook.php <file> --key k2 --out playbooks/ --registry registry.json`):
+  the document must pass full schema + live-tool validation BEFORE anything is signed,
+  the result is self-verified against the plugin's own verifier, and the registry entry
+  flips to `"signed": true` with `"key_id": "k2"`. A pre-signed submission is refused —
+  promotion signs community work, never over someone else's seal.
 
 ## Review priorities
 

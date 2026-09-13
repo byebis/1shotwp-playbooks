@@ -3,7 +3,7 @@
 The public, zero-server marketplace registry for [1ShotWP](https://github.com/byebis/1shotwp) playbooks: guided, agent-run jobs for WordPress, distributed as **signed JSON documents** (never executable code).
 
 - **Format**: `1shotwp-playbook` v1 — params, steps (with the exact tools to call), guardrails, license.
-- **Integrity**: every file is sha256-pinned in [`registry.json`](registry.json); official playbooks carry a detached **Ed25519 signature** over their canonical form (keys/).
+- **Integrity**: every file is sha256-pinned in [`registry.json`](registry.json); official playbooks carry a detached **Ed25519 signature** over their canonical form (public keys: `keys/`, generations `k1`/`k2` — `k2` signs everything since 1.6.2; each entry declares its `key_id`).
 - **Runtime**: the 1ShotWP plugin (≥ 1.6.0) reads this registry, verifies pins + signatures, checks every referenced tool against YOUR site, and hands the playbook to the agent — which executes it step by step through the normal safety stack (capabilities, approval queue, paranoid mode, undo journal). **Install ≠ run.**
 - **No server of ours**: this is a static Git repository. No accounts, no telemetry, no phone-home.
 
