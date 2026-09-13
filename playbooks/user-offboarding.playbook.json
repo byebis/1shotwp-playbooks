@@ -1,0 +1,70 @@
+{
+    "format": "1shotwp-playbook",
+    "format_version": 1,
+    "id": "user-offboarding",
+    "version": "1.0.0",
+    "name": "User offboarding (safe)",
+    "description": "Remove a person's access without destroying their work: sessions killed, content reassigned, role downgraded or user deleted with explicit reassignment targets.",
+    "license": "MIT",
+    "author": {
+        "name": "1ShotWP"
+    },
+    "tags": [
+        "users",
+        "security"
+    ],
+    "params": [
+        {
+            "name": "user_id",
+            "description": "The user id to offboard.",
+            "required": true
+        },
+        {
+            "name": "reassign_to",
+            "description": "User id that inherits the authored content when deleting.",
+            "required": false
+        }
+    ],
+    "steps": [
+        {
+            "title": "Identify",
+            "detail": "Call wp_get_user (id=<user_id>) and wp_list_user_sessions for the account: confirm identity, role, last activity and the number of active sessions.",
+            "tools": [
+                "wp_get_user",
+                "wp_list_user_sessions"
+            ]
+        },
+        {
+            "title": "Inventory their work",
+            "detail": "Call wp_list_posts (author=<user_id>, per_page=100) and report counts by status; list media authored via wp_list_media if the owner asks.",
+            "tools": [
+                "wp_list_posts"
+            ]
+        },
+        {
+            "title": "Kill sessions",
+            "detail": "With confirmation, call wp_destroy_user_sessions for the account: access is gone immediately, content untouched.",
+            "tools": [
+                "wp_destroy_user_sessions"
+            ]
+        },
+        {
+            "title": "Downgrade or delete",
+            "detail": "Preferred: call wp_update_user to set the role to subscriber (reversible). Only with explicit owner instruction AND a reassign target, call wp_delete_user (reassign_posts=<reassign_to>): the tool refuses last-admin and refuses to orphan content.",
+            "tools": [
+                "wp_update_user",
+                "wp_delete_user"
+            ]
+        },
+        {
+            "title": "Report",
+            "detail": "Deliver: sessions destroyed, role change or deletion result, content disposition, and the reversal path (role can be restored via wp_update_user).",
+            "tools": []
+        }
+    ],
+    "guardrails": [
+        "wp_delete_user requires an explicit reassign target: refuse to run it bare.",
+        "Never offboard user id 1 or the last administrator: the tools will refuse, do not try to work around them."
+    ],
+    "signature": "Sa66fuFiyfbS0WOg1dYFG4XDUYm9ITXXlvPYPRDREUOx/omhWyMsq3iKZkAjbvj0VGcLmu0RJG7KYZeb+nQrDQ=="
+}

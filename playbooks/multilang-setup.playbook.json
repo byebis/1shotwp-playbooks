@@ -1,0 +1,67 @@
+{
+    "format": "1shotwp-playbook",
+    "format_version": 1,
+    "id": "multilang-setup",
+    "version": "1.0.0",
+    "name": "Multilingual starter",
+    "description": "Prepare a site for two languages: language inventory, per-post language assignment, translation linking, and a duplicated menu structure check.",
+    "license": "MIT",
+    "author": {
+        "name": "1ShotWP"
+    },
+    "tags": [
+        "i18n",
+        "content"
+    ],
+    "params": [
+        {
+            "name": "source_posts",
+            "description": "Post ids to prepare for translation.",
+            "required": true
+        }
+    ],
+    "steps": [
+        {
+            "title": "Survey",
+            "detail": "Call wp_get_site_info and wp_list_posts (per_page=100) to understand the current language mix and which plugin (WPML/Polylang) is installed.",
+            "tools": [
+                "wp_get_site_info",
+                "wp_list_posts"
+            ]
+        },
+        {
+            "title": "Assign languages",
+            "detail": "For each id in <source_posts>, call wp_set_post_language with the correct locale.",
+            "tools": [
+                "wp_set_post_language"
+            ]
+        },
+        {
+            "title": "Link translations",
+            "detail": "After the owner (or the agent in a second pass) creates the translated counterparts with wp_create_post, call wp_link_post_translation to bind source and translation.",
+            "tools": [
+                "wp_create_post",
+                "wp_link_post_translation"
+            ]
+        },
+        {
+            "title": "Menus",
+            "detail": "Call wp_list_menus and report whether each language has a menu; propose the structure but create menus only on confirmation (wp_create_menu + wp_add_menu_item).",
+            "tools": [
+                "wp_list_menus",
+                "wp_create_menu",
+                "wp_add_menu_item"
+            ]
+        },
+        {
+            "title": "Report",
+            "detail": "Deliver: language assignments, translation pairs linked, menu gaps, and the list of posts still needing translation.",
+            "tools": []
+        }
+    ],
+    "guardrails": [
+        "Never delete the source post when linking a translation.",
+        "Translations are created as drafts; publishing is the owner's call."
+    ],
+    "signature": "Y6oB6k+tiem3esw/c28VJdM50aYrPxm347VgWqUQeJkZfdFoXkPDFBeuYnLd3HU4nRyJCB7/lvpYzDzmLYwgDQ=="
+}

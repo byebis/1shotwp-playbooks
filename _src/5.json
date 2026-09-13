@@ -1,0 +1,23 @@
+{
+  "format": "1shotwp-playbook",
+  "format_version": 1,
+  "id": "comment-spam-purge",
+  "version": "1.0.0",
+  "name": "Comment spam purge",
+  "description": "Measure the spam backlog, purge it reversibly (spam flag, never hard delete), then harden the comment settings so the backlog does not rebuild.",
+  "license": "MIT",
+  "author": { "name": "1ShotWP" },
+  "tags": ["comments", "spam", "maintenance"],
+  "steps": [
+    { "title": "Measure", "detail": "Call wp_list_comments (status=spam, per_page=100) and wp_list_comments (status=hold, per_page=100): report counts and the oldest spam date.", "tools": ["wp_list_comments"] },
+    { "title": "Purge the spam flag", "detail": "With owner confirmation, call wp_moderate_comment (status=spam) for the confirmed-spam backlog. This keeps items recoverable.", "tools": ["wp_moderate_comment"] },
+    { "title": "Review the pending queue", "detail": "Read wp_list_comments (status=hold): separate real humans from pattern spam; propose the verdict per comment id but only act on explicit confirmation.", "tools": ["wp_list_comments"] },
+    { "title": "Harden settings", "detail": "Call wp_get_settings, then wp_update_settings to close registration for commenters and enable moderation queues, with owner confirmation.", "tools": ["wp_get_settings", "wp_update_settings"] },
+    { "title": "Report", "detail": "Deliver before/after counts, settings changed, and the residual manual queue.", "tools": [] }
+  ],
+  "guardrails": [
+    "Spam flag only, never permanent deletion, in this playbook.",
+    "Human-looking comments are never auto-flagged: they wait for the owner."
+  ],
+  "signature": ""
+}

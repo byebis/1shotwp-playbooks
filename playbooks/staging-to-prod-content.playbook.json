@@ -1,0 +1,60 @@
+{
+    "format": "1shotwp-playbook",
+    "format_version": 1,
+    "id": "staging-to-prod-content",
+    "version": "1.0.0",
+    "name": "Staging to production content promotion",
+    "description": "Promote reviewed content changes: verify the production snapshot, apply the agreed edits, sweep dev URLs out, and keep the journal as the rollback path.",
+    "license": "MIT",
+    "author": {
+        "name": "1ShotWP"
+    },
+    "tags": [
+        "deployment",
+        "content"
+    ],
+    "steps": [
+        {
+            "title": "Pre-flight",
+            "detail": "Call wp_site_snapshot and wp_get_site_info: confirm this is the PRODUCTION site (ask twice if unsure) and record the current state.",
+            "tools": [
+                "wp_site_snapshot",
+                "wp_get_site_info"
+            ]
+        },
+        {
+            "title": "Apply the content set",
+            "detail": "For the agreed list, call wp_update_post (or wp_create_post for new pages) with the reviewed copy from staging; verify each with wp_get_post.",
+            "tools": [
+                "wp_update_post",
+                "wp_create_post",
+                "wp_get_post"
+            ]
+        },
+        {
+            "title": "URL sweep",
+            "detail": "Call wp_search_replace (dry-run semantics first: count matches before replacing) to rewrite staging hostnames in the promoted content; run the replacement only on the agreed ids.",
+            "tools": [
+                "wp_search_replace"
+            ]
+        },
+        {
+            "title": "Verify",
+            "detail": "Call wp_get_recent_activity and wp_list_changes to show exactly what moved; anything unexpected is immediately discussed (wp_undo_change is the escape hatch).",
+            "tools": [
+                "wp_get_recent_activity",
+                "wp_list_changes"
+            ]
+        },
+        {
+            "title": "Report",
+            "detail": "Deliver the promoted-items list with ids, the URL sweep result, and the rollback instructions.",
+            "tools": []
+        }
+    ],
+    "guardrails": [
+        "wp_search_replace runs only on the agreed post ids and never on user tables.",
+        "Stop immediately if the site does not look like production (maintenance mode, placeholder content)."
+    ],
+    "signature": "rCC5TsfpHuJ9W90hKt3uAiuuwuPaBxNp7jdF3yNmaKEy1MIfDFV3LpFK08z0l2FUnRNzAi+9HOMLsMpWpjnSDA=="
+}

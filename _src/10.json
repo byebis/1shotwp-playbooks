@@ -1,0 +1,85 @@
+{
+  "format": "1shotwp-playbook",
+  "format_version": 1,
+  "id": "woo-catalog-audit",
+  "version": "1.0.0",
+  "name": "WooCommerce catalog audit",
+  "description": "Shop health: system status, product inventory and gaps, review queue, coupon usage sanity, out-of-stock list and order pipeline counts.",
+  "license": "MIT",
+  "author": {
+    "name": "1ShotWP"
+  },
+  "tags": [
+    "woocommerce",
+    "audit",
+    "shop"
+  ],
+  "compat": {
+    "requires": {
+      "plugins": [
+        "woocommerce"
+      ]
+    }
+  },
+  "steps": [
+    {
+      "title": "System status",
+      "detail": "Call wc_get_system_status and report anything failing (missing requirements, old schema).",
+      "tools": [
+        "wc_get_system_status"
+      ]
+    },
+    {
+      "title": "Catalog inventory",
+      "detail": "Call wc_list_products (per_page=100) and wc_list_product_categories: report counts by status, products missing price, products missing images.",
+      "tools": [
+        "wc_list_products",
+        "wc_list_product_categories"
+      ]
+    },
+    {
+      "title": "Out of stock",
+      "detail": "Call wc_list_out_of_stock and propose restock or hide, one product at a time (wc_update_product only with confirmation).",
+      "tools": [
+        "wc_list_out_of_stock",
+        "wc_update_product"
+      ]
+    },
+    {
+      "title": "Reviews",
+      "detail": "Call wc_list_reviews (status=hold) and wc_get_product_review_summary for the top products: moderate with wc_approve_review or the reject equivalent on confirmation.",
+      "tools": [
+        "wc_list_reviews",
+        "wc_get_product_review_summary",
+        "wc_approve_review"
+      ]
+    },
+    {
+      "title": "Coupons",
+      "detail": "Call wc_list_coupons and wc_coupon_usage_report: flag expired-but-active and about-to-expire coupons (wc_expire_coupon on confirmation).",
+      "tools": [
+        "wc_list_coupons",
+        "wc_coupon_usage_report",
+        "wc_expire_coupon"
+      ]
+    },
+    {
+      "title": "Order pipeline",
+      "detail": "Call wc_count_orders_by_status and wc_average_order_value: report the funnel and any order stuck in on-hold longer than the owner's threshold.",
+      "tools": [
+        "wc_count_orders_by_status",
+        "wc_average_order_value"
+      ]
+    },
+    {
+      "title": "Report",
+      "detail": "Deliver the shop health summary with ids and the agreed next actions.",
+      "tools": []
+    }
+  ],
+  "guardrails": [
+    "Requires WooCommerce active: the install validator checks it via the live tool registry.",
+    "Product/status mutations are per-id and owner-confirmed; never bulk-write in an audit."
+  ],
+  "signature": ""
+}

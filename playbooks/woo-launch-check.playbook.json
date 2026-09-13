@@ -1,0 +1,86 @@
+{
+    "format": "1shotwp-playbook",
+    "format_version": 1,
+    "id": "woo-launch-check",
+    "version": "1.0.0",
+    "name": "WooCommerce first-sale readiness",
+    "description": "Pre-launch shop check: payment gateway live, shipping zone present, tax class sane, first product complete, welcome coupon tested, order pipeline dry-run.",
+    "license": "MIT",
+    "author": {
+        "name": "1ShotWP"
+    },
+    "tags": [
+        "woocommerce",
+        "launch",
+        "shop"
+    ],
+    "compat": {
+        "requires": {
+            "plugins": [
+                "woocommerce"
+            ]
+        }
+    },
+    "steps": [
+        {
+            "title": "Payments",
+            "detail": "Call wc_list_payment_gateways and confirm at least one enabled gateway with a completed setup; report the checkout path for the owner.",
+            "tools": [
+                "wc_list_payment_gateways"
+            ]
+        },
+        {
+            "title": "Shipping",
+            "detail": "Call wc_list_shipping_zones (or create one with wc_create_shipping_zone + wc_create_shipping_method when the owner agrees) and verify the home country is covered.",
+            "tools": [
+                "wc_list_shipping_zones",
+                "wc_create_shipping_zone",
+                "wc_create_shipping_method"
+            ]
+        },
+        {
+            "title": "Taxes",
+            "detail": "Call wc_list_tax_classes (create with wc_create_tax_class + wc_create_tax_rate on confirmation) and verify prices-entered-with-tax matches the owner's intent.",
+            "tools": [
+                "wc_list_tax_classes",
+                "wc_create_tax_class",
+                "wc_create_tax_rate"
+            ]
+        },
+        {
+            "title": "First product",
+            "detail": "Call wc_get_product on the hero product (or wc_create_product when none exists): verify price, stock status, description and image; fix with wc_update_product on confirmation.",
+            "tools": [
+                "wc_get_product",
+                "wc_create_product",
+                "wc_update_product"
+            ]
+        },
+        {
+            "title": "Welcome coupon",
+            "detail": "Call wc_create_coupon (or wc_get_coupon to verify) for a first-order discount; confirm restrictions (email, usage limit) with the owner.",
+            "tools": [
+                "wc_create_coupon",
+                "wc_get_coupon"
+            ]
+        },
+        {
+            "title": "Order pipeline",
+            "detail": "Call wc_get_orderable_statuses and wc_list_email_notifications: verify statuses and the customer/admin notification emails are enabled, then wc_test_email if available for the shop email.",
+            "tools": [
+                "wc_get_orderable_statuses",
+                "wc_list_email_notifications"
+            ]
+        },
+        {
+            "title": "Report",
+            "detail": "Deliver a go/no-go checklist with the exact gaps left.",
+            "tools": []
+        }
+    ],
+    "guardrails": [
+        "Never touch live orders or existing coupons during a readiness check.",
+        "Gateway credentials are never read back or echoed: report enabled/disabled only."
+    ],
+    "signature": "ppAI92NuUypq4F6sQnBPAEdkwhLch8zmKlQfKyT7ek6OsNFSeOjrYT7o+7eE4xv3Lcm3p+aT7uWRpOhsjCXLDg=="
+}

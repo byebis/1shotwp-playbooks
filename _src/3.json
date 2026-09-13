@@ -1,0 +1,23 @@
+{
+  "format": "1shotwp-playbook",
+  "format_version": 1,
+  "id": "gdpr-privacy-pass",
+  "version": "1.0.0",
+  "name": "GDPR / privacy pass",
+  "description": "Privacy baseline: privacy policy page present, comment settings conservative, user inventory, and a moderation sweep of pending items.",
+  "license": "MIT",
+  "author": { "name": "1ShotWP" },
+  "tags": ["privacy", "compliance", "comments"],
+  "steps": [
+    { "title": "Inventory the site", "detail": "Call wp_get_site_info and wp_list_posts (post_type=page) to find the privacy policy page. Note if it is missing or a stub.", "tools": ["wp_get_site_info", "wp_list_posts"] },
+    { "title": "Comment policy", "detail": "Call wp_get_settings and report comment_moderation and comment_registration status. Call wp_update_settings to enable manual moderation ONLY with explicit owner confirmation.", "tools": ["wp_get_settings", "wp_update_settings"] },
+    { "title": "Users inventory", "detail": "Call wp_list_users (per_page=100) and list roles; flag stale accounts (no posts) for the owner without deleting anything.", "tools": ["wp_list_users"] },
+    { "title": "Moderation sweep", "detail": "Call wp_list_comments (status=hold) and summarize volume and obvious spam; with confirmation, call wp_moderate_comment to mark spam as spam (never delete).", "tools": ["wp_list_comments", "wp_moderate_comment"] },
+    { "title": "Report", "detail": "Deliver: privacy page status, comment settings (changed or not, with confirmation), user inventory highlights, spam counts.", "tools": [] }
+  ],
+  "guardrails": [
+    "Never delete users or comments in this playbook: privacy work must be reversible.",
+    "wp_update_settings changes are owner-confirmed one by one."
+  ],
+  "signature": ""
+}

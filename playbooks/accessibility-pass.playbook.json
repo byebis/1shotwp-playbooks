@@ -1,0 +1,60 @@
+{
+    "format": "1shotwp-playbook",
+    "format_version": 1,
+    "id": "accessibility-pass",
+    "version": "1.0.0",
+    "name": "Accessibility pass",
+    "description": "A practical a11y baseline: global styles contrast review, image alt-text coverage, heading structure spot-check on key pages, and safe fixes.",
+    "license": "MIT",
+    "author": {
+        "name": "1ShotWP"
+    },
+    "tags": [
+        "accessibility",
+        "content",
+        "media"
+    ],
+    "steps": [
+        {
+            "title": "Global styles",
+            "detail": "Call wp_get_global_styles and report text/background color pairs; compute contrast ratios and list the failing ones (fix via wp_update_global_styles only with owner confirmation).",
+            "tools": [
+                "wp_get_global_styles",
+                "wp_update_global_styles"
+            ]
+        },
+        {
+            "title": "Alt-text coverage",
+            "detail": "Call wp_list_media (per_page=100) and list attachments with empty alt text; fix metadata with wp_update_media for the agreed ids.",
+            "tools": [
+                "wp_list_media",
+                "wp_update_media"
+            ]
+        },
+        {
+            "title": "Key pages structure",
+            "detail": "Call wp_list_posts (post_type=page, status=publish) and wp_get_post for Home/About/Contact: report heading hierarchy breaks (multiple H1, skipped levels) with concrete suggested fixes.",
+            "tools": [
+                "wp_list_posts",
+                "wp_get_post"
+            ]
+        },
+        {
+            "title": "Apply heading fixes",
+            "detail": "For agreed pages, call wp_update_post to correct heading levels in the content; one page per call, verify after each.",
+            "tools": [
+                "wp_update_post"
+            ]
+        },
+        {
+            "title": "Report",
+            "detail": "Deliver: contrast findings, alt-text coverage percentage before/after, heading fixes applied, and the remaining manual items (theme-level, forms).",
+            "tools": []
+        }
+    ],
+    "guardrails": [
+        "Never rewrite page copy for a11y: structure and metadata only.",
+        "Color fixes go through global styles, never inline styles per block."
+    ],
+    "signature": "aAv6sGP5veJe5bhzHahMTh0xD2+Joaq73mIkffgH4lL/KSU+qrZUgAfGpXd1y/1RadBAsXQuwHzPSEXEWVP8Bg=="
+}

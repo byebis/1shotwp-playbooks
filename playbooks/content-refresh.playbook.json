@@ -1,0 +1,66 @@
+{
+    "format": "1shotwp-playbook",
+    "format_version": 1,
+    "id": "content-refresh",
+    "version": "1.0.0",
+    "name": "Stale content refresh",
+    "description": "Find the oldest still-relevant published posts, refresh facts and dates where safe, and leave an audit trail via a checkpoint before writing.",
+    "license": "MIT",
+    "author": {
+        "name": "1ShotWP"
+    },
+    "tags": [
+        "content",
+        "maintenance"
+    ],
+    "params": [
+        {
+            "name": "count",
+            "description": "How many posts to refresh.",
+            "required": false,
+            "default": 5
+        }
+    ],
+    "steps": [
+        {
+            "title": "Safety checkpoint",
+            "detail": "Call wp_create_checkpoint with a label like 'content-refresh pre-flight' so every change made by this run is revertible in one call.",
+            "tools": [
+                "wp_create_checkpoint"
+            ]
+        },
+        {
+            "title": "Pick the candidates",
+            "detail": "Call wp_list_posts (status=publish, orderby=date asc, per_page=<count>) and read each with wp_get_post. Flag posts whose content references years, prices or 'coming soon' blocks.",
+            "tools": [
+                "wp_list_posts",
+                "wp_get_post"
+            ]
+        },
+        {
+            "title": "Check current SEO meta",
+            "detail": "Call wp_get_post_seo for each candidate to see the live title/description before touching anything.",
+            "tools": [
+                "wp_get_post_seo"
+            ]
+        },
+        {
+            "title": "Refresh the copy",
+            "detail": "Call wp_update_post per approved candidate: update stale references, fix broken internal references you can verify, keep the author's voice. Draft the diff summary for the owner.",
+            "tools": [
+                "wp_update_post"
+            ]
+        },
+        {
+            "title": "Report and offer rollback",
+            "detail": "Summarize what changed per post id and remind the owner the checkpoint from step 1 reverts everything with wp_restore_checkpoint.",
+            "tools": []
+        }
+    ],
+    "guardrails": [
+        "One post at a time: update, verify with wp_get_post, then move on.",
+        "Never delete content during a refresh; suggest deletion separately.",
+        "Stop and ask when a fact cannot be verified from the site itself."
+    ],
+    "signature": "bb4QXjc0gGYmfpKP+OraSYDGRUqCPVexpHJp8bBOCKqemhZAo9VowenT8VVDQW6hh22dwllZCFLOZicoa8HCAA=="
+}

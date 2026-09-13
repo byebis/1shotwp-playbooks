@@ -1,0 +1,23 @@
+{
+  "format": "1shotwp-playbook",
+  "format_version": 1,
+  "id": "backup-drill",
+  "version": "1.0.0",
+  "name": "Backup drill",
+  "description": "Prove reversibility before you need it: snapshot, checkpoint, a reversible change, verify the journal, and rehearse the restore path.",
+  "license": "MIT",
+  "author": { "name": "1ShotWP" },
+  "tags": ["backup", "recovery", "maintenance"],
+  "steps": [
+    { "title": "Snapshot", "detail": "Call wp_site_snapshot to capture the current site state summary (versions, active theme/plugins, counts).", "tools": ["wp_site_snapshot"] },
+    { "title": "Checkpoint", "detail": "Call wp_create_checkpoint ('backup drill') and note the checkpoint id; list existing ones with wp_list_checkpoints to show retention.", "tools": ["wp_create_checkpoint", "wp_list_checkpoints"] },
+    { "title": "Make a reversible change", "detail": "With owner consent, call wp_update_settings to change a harmless setting (e.g. blog description); capture the change_id from the response.", "tools": ["wp_update_settings"] },
+    { "title": "Verify the journal", "detail": "Call wp_list_changes (newest first) and wp_get_change (change_id) to show exactly what the journal recorded, then call wp_undo_change (change_id) to revert and verify with wp_get_settings.", "tools": ["wp_list_changes", "wp_get_change", "wp_undo_change", "wp_get_settings"] },
+    { "title": "Report", "detail": "Deliver: snapshot summary, checkpoint id, the drilled change + undo proof, and the restore paths available (checkpoint, undo, host-level backups).", "tools": [] }
+  ],
+  "guardrails": [
+    "The drilled change must be cosmetic and self-reverted within the run.",
+    "Never drill with content deletion or user changes."
+  ],
+  "signature": ""
+}

@@ -1,0 +1,76 @@
+{
+    "format": "1shotwp-playbook",
+    "format_version": 1,
+    "id": "speed-pass",
+    "version": "1.0.0",
+    "name": "Speed pass",
+    "description": "Performance hygiene without third-party claims: media sizes complete, unused media listed, transient garbage collected, cron queue sane, core/plugins up to date, Site Health clean.",
+    "license": "MIT",
+    "author": {
+        "name": "1ShotWP"
+    },
+    "tags": [
+        "performance",
+        "maintenance"
+    ],
+    "steps": [
+        {
+            "title": "Baseline",
+            "detail": "Call wp_get_site_info and wp_run_site_health; note any performance-related failing tests as the baseline.",
+            "tools": [
+                "wp_get_site_info",
+                "wp_run_site_health"
+            ]
+        },
+        {
+            "title": "Media sizes",
+            "detail": "Call wp_list_missing_sizes (per_page=20). If images miss generated sizes, call wp_regenerate_thumbnails for the listed ids.",
+            "tools": [
+                "wp_list_missing_sizes",
+                "wp_regenerate_thumbnails"
+            ]
+        },
+        {
+            "title": "Unused media",
+            "detail": "Call wp_find_unused_media (per_page=50) and report the list: deletion is a separate owner decision, this playbook never deletes.",
+            "tools": [
+                "wp_find_unused_media"
+            ]
+        },
+        {
+            "title": "Transients",
+            "detail": "Call wp_get_transients and delete obviously expired junk with wp_delete_transient (never object-cache internals, never options).",
+            "tools": [
+                "wp_get_transients",
+                "wp_delete_transient"
+            ]
+        },
+        {
+            "title": "Cron queue",
+            "detail": "Call wp_list_cron_events and report overdue events; run a single stuck one with wp_run_cron_event if the owner confirms.",
+            "tools": [
+                "wp_list_cron_events",
+                "wp_run_cron_event"
+            ]
+        },
+        {
+            "title": "Updates",
+            "detail": "Call wp_list_plugins and wp_list_themes; if updates are pending, call wp_update_plugins only after owner confirmation (checkpoint exists via Site Health history).",
+            "tools": [
+                "wp_list_plugins",
+                "wp_list_themes",
+                "wp_update_plugins"
+            ]
+        },
+        {
+            "title": "Report",
+            "detail": "Summarize: baseline issues, media fixed, transients cleaned, cron state, updates applied, and the two highest-impact next steps for the owner.",
+            "tools": []
+        }
+    ],
+    "guardrails": [
+        "wp_update_plugins runs only with explicit owner confirmation and never on production without a backup statement.",
+        "Never deactivate any plugin during a speed pass: conflicts are a separate investigation."
+    ],
+    "signature": "yS1efqEpRR+mMg45/m346EvR28bXu/ZplMTirkiQ1hqtXE322CwNp+u7caewJgLf+N7Ck3DNPLwOykv3GiAJAw=="
+}

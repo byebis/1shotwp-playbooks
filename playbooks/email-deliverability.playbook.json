@@ -1,0 +1,58 @@
+{
+    "format": "1shotwp-playbook",
+    "format_version": 1,
+    "id": "email-deliverability",
+    "version": "1.0.0",
+    "name": "Email deliverability check",
+    "description": "Make transactional email trustworthy: admin email sanity, test message, plugin-based SMTP detection, notification inventory.",
+    "license": "MIT",
+    "author": {
+        "name": "1ShotWP"
+    },
+    "tags": [
+        "email",
+        "diagnostics"
+    ],
+    "steps": [
+        {
+            "title": "Identity",
+            "detail": "Call wp_get_settings and report the admin email and from-name expectations; fix typos with wp_update_settings on confirmation.",
+            "tools": [
+                "wp_get_settings",
+                "wp_update_settings"
+            ]
+        },
+        {
+            "title": "Send a test",
+            "detail": "Call wp_test_email to the owner-provided address and report the result code.",
+            "tools": [
+                "wp_test_email"
+            ]
+        },
+        {
+            "title": "SMTP detection",
+            "detail": "Call wp_list_plugins and look for SMTP/mail plugins; if present, call wp_get_plugin_setting for the relevant keys WITHOUT echoing credentials, and report configured/not-configured.",
+            "tools": [
+                "wp_list_plugins",
+                "wp_get_plugin_setting"
+            ]
+        },
+        {
+            "title": "Notification inventory",
+            "detail": "List what the site sends (comment moderation, new user, Woo notifications via wc_list_email_notifications when present) so the owner knows the dependency on deliverability.",
+            "tools": [
+                "wc_list_email_notifications"
+            ]
+        },
+        {
+            "title": "Report",
+            "detail": "Deliver: test result, SMTP status, notification dependency list, and the recommended fix path (SMTP plugin + SPF/DKIM at DNS, owner-managed).",
+            "tools": []
+        }
+    ],
+    "guardrails": [
+        "SMTP passwords and API keys are never printed: configured/not-configured only.",
+        "One test email per run to an owner-provided address: no mass sends."
+    ],
+    "signature": "CLsgXKVrcF7L6k3kDtZhlaS6tFy5B6XeghZh6ul4Hak0nlGg8YwlKlegvrAoxAMx1KFVHQZL8t8pSd6CmotBCQ=="
+}

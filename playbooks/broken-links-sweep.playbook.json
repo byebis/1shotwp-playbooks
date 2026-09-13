@@ -1,0 +1,60 @@
+{
+    "format": "1shotwp-playbook",
+    "format_version": 1,
+    "id": "broken-links-sweep",
+    "version": "1.0.0",
+    "name": "Broken links sweep",
+    "description": "Scan for broken links, fix internal ones in place, and add 301 redirects for moved URLs instead of editing external targets.",
+    "license": "MIT",
+    "author": {
+        "name": "1ShotWP"
+    },
+    "tags": [
+        "content",
+        "seo",
+        "links"
+    ],
+    "params": [
+        {
+            "name": "scope",
+            "description": "post id to scan, or 'all' for every published post.",
+            "required": false,
+            "default": "all"
+        }
+    ],
+    "steps": [
+        {
+            "title": "Scan",
+            "detail": "Call wp_find_broken_links (post_id=<scope> when numeric) and group results: internal vs external, 404 vs timeouts.",
+            "tools": [
+                "wp_find_broken_links"
+            ]
+        },
+        {
+            "title": "Fix internal links",
+            "detail": "For each internal 404 with an obvious replacement (renamed slug), call wp_update_post with the corrected URL, one post at a time, verifying with wp_get_post.",
+            "tools": [
+                "wp_update_post",
+                "wp_get_post"
+            ]
+        },
+        {
+            "title": "Redirect moved URLs",
+            "detail": "For internal URLs that must keep working (linked from third parties), call wp_set_redirect (301) to the new location, then confirm with wp_list_redirects.",
+            "tools": [
+                "wp_set_redirect",
+                "wp_list_redirects"
+            ]
+        },
+        {
+            "title": "Report externals",
+            "detail": "External broken links are listed with context for the owner: this playbook never edits third-party targets.",
+            "tools": []
+        }
+    ],
+    "guardrails": [
+        "Never mass-edit posts in one pass: internal link fixes go one by one.",
+        "Redirect chains are forbidden: point every redirect at the final live URL."
+    ],
+    "signature": "j47QkREwqQfLXVjnu/HsPjVPQbQKX7Vu3MTlfkb2YkOOrX+4yjY809LEwWmiURIvsdNCmHXv+HVIdFyUmvp6Bg=="
+}

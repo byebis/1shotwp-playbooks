@@ -1,0 +1,73 @@
+{
+    "format": "1shotwp-playbook",
+    "format_version": 1,
+    "id": "seo-audit-pro",
+    "version": "1.0.0",
+    "name": "SEO audit (pro)",
+    "description": "Full SEO health check: which SEO plugin is live, sitemap reachable, per-post title/description quality on the most important pages, and fixes applied only where the owner asked.",
+    "license": "MIT",
+    "author": {
+        "name": "1ShotWP"
+    },
+    "tags": [
+        "seo",
+        "audit",
+        "content"
+    ],
+    "params": [
+        {
+            "name": "limit",
+            "description": "How many published posts/pages to audit, newest first.",
+            "required": false,
+            "default": 10
+        }
+    ],
+    "steps": [
+        {
+            "title": "Identify the SEO stack",
+            "detail": "Call wp_list_seo_plugins and report which plugin is active (Yoast, Rank Math, AIOSEO, SEOPress) and any conflicts.",
+            "tools": [
+                "wp_list_seo_plugins"
+            ]
+        },
+        {
+            "title": "Check the sitemap",
+            "detail": "Call wp_read_sitemap and confirm it renders and contains the main content types. Note anything missing for the report.",
+            "tools": [
+                "wp_read_sitemap"
+            ]
+        },
+        {
+            "title": "Audit the newest posts",
+            "detail": "Call wp_list_posts (status=publish, per_page=<limit>), then wp_audit_post_seo for each. Summarize missing titles, missing meta descriptions, thin content and duplicate titles.",
+            "tools": [
+                "wp_list_posts",
+                "wp_audit_post_seo"
+            ]
+        },
+        {
+            "title": "Fix what was agreed",
+            "detail": "For posts the owner asked to fix, call wp_set_post_seo with improved titles/descriptions. Draft-quality suggestions first; never invent facts.",
+            "tools": [
+                "wp_set_post_seo"
+            ]
+        },
+        {
+            "title": "Settings sanity",
+            "detail": "Call wp_get_settings and verify blog_public is enabled (the site is not discouraging search engines).",
+            "tools": [
+                "wp_get_settings"
+            ]
+        },
+        {
+            "title": "Report",
+            "detail": "Deliver a summary: issues found, issues fixed, issues left for the owner, with post ids and titles.",
+            "tools": []
+        }
+    ],
+    "guardrails": [
+        "wp_set_post_seo rewrites live metadata: confirm the list of posts with the owner before bulk fixes.",
+        "Never fabricate keywords: only use terms actually present in the content."
+    ],
+    "signature": "Vz9cDqW9i8z2+ckK2FhUbDP/CmECR8squlB/yIk90mpTqGJ5gw6gNkDWs4qk+4C0z4+jEGlHSMsZyI72Y184Cg=="
+}
