@@ -72,5 +72,5 @@
         "wp_update_plugins runs only with explicit owner confirmation and never on production without a backup statement.",
         "Never deactivate any plugin during a speed pass: conflicts are a separate investigation."
     ],
-    "signature": "yS1efqEpRR+mMg45/m346EvR28bXu/ZplMTirkiQ1hqtXE322CwNp+u7caewJgLf+N7Ck3DNPLwOykv3GiAJAw=="
+    "signature": "f+Q5BcLm/ahgyAog5MDNbOdrY5aFf3wxU8m9ouVlbZ1p2RbseKLjN+G61+8SiCuSKVhdLKu32b/HMc4BOeD1Ag=="
 }

@@ -81,5 +81,5 @@
         "Requires WooCommerce active: the install validator checks it via the live tool registry.",
         "Product/status mutations are per-id and owner-confirmed; never bulk-write in an audit."
     ],
-    "signature": "vnv5UnnDg1vAE62zFeJ8ZM+EpmajFF6uVlatE85ycp6ZCpKzmNGoSAGjKh0y/KjGx2YiNnB8VoA193dJEN+1Dg=="
+    "signature": "mnWfVPHDK3xTP4EmWgA6tbKTo2TJrfuBtt2/Hge9zKQuXRYOmO/d02MiJOj178RjObCS1FzFKtdiQR5hmS/7DA=="
 }

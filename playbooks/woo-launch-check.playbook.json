@@ -82,5 +82,5 @@
         "Never touch live orders or existing coupons during a readiness check.",
         "Gateway credentials are never read back or echoed: report enabled/disabled only."
     ],
-    "signature": "ppAI92NuUypq4F6sQnBPAEdkwhLch8zmKlQfKyT7ek6OsNFSeOjrYT7o+7eE4xv3Lcm3p+aT7uWRpOhsjCXLDg=="
+    "signature": "51N0teCZuEL4lcNrp0/PyXQ/sSh16g1wzDYZY4QHyusV3e80hfN9S2AvsaRGqLwIZ0g193EADYtYS56EH+LxDQ=="
 }

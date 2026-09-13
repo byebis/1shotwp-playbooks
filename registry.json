@@ -1,8 +1,8 @@
 {
     "format": "1shotwp-playbook-registry/1",
-    "updated": "2026-09-13T08:18:02+00:00",
+    "updated": "2026-09-13T08:57:32+00:00",
     "base_url": "https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/",
-    "public_key": "DCPhrUarbuNx6Oj00OU7+uqIKoaQSbmJuBrgG3krftI=",
+    "public_key": "qCIGkqkcacCkIsyQyKdAuXWw9u5bFAKI4DGA4x4HxIw=",
     "playbooks": [
         {
             "id": "seo-audit-pro",
@@ -16,7 +16,7 @@
             ],
             "license": "MIT",
             "author": "1ShotWP",
-            "sha256": "dfe95806861e01936c52e90def7baf3195789a6f4e737a5068f1a44420dffcc9",
+            "sha256": "833988accc39a7c8bfe92efcb02ac7929665a611d31683651806c935a1b5d863",
             "signed": true,
             "min_plugin": "1.6.0"
         },
@@ -32,7 +32,7 @@
             ],
             "license": "MIT",
             "author": "1ShotWP",
-            "sha256": "10712b1ea45a96a8eea28b3a20e2f7f22a1ffbcde83631f90aa2ebf37b1fd5df",
+            "sha256": "b21ce0077f6851ec16902e42ce8fd39da3cfcda03eb78270ee13762e580d7c57",
             "signed": true,
             "min_plugin": "1.6.0"
         },
@@ -48,7 +48,7 @@
             ],
             "license": "MIT",
             "author": "1ShotWP",
-            "sha256": "ae5443f45f459bd761dfe8224f123021d647a8c0c96b22cebf3079910f9e5024",
+            "sha256": "f0682c9978e4a980cb3749274451e44919886814b9fa8cde3a14bdcdfe3620a7",
             "signed": true,
             "min_plugin": "1.6.0"
         },
@@ -63,7 +63,7 @@
             ],
             "license": "MIT",
             "author": "1ShotWP",
-            "sha256": "8114c03d97fe4fc47f5062c71c5b8efc4fd78da1dfffafeac10957cc65ad998d",
+            "sha256": "cbb7056ac54eb4a819645fc1d1821abf1fffa5c19ac8f7df6ec0bdc93ab87792",
             "signed": true,
             "min_plugin": "1.6.0"
         },
@@ -79,7 +79,7 @@
             ],
             "license": "MIT",
             "author": "1ShotWP",
-            "sha256": "80b920ec320e830218f391bffc9549a7332ff5ea59f64765cb46b6e623b98b45",
+            "sha256": "cc4ef21cd595d76dcbeaf30e3fd934ba97c3bac242dda3966c062f40282197ed",
             "signed": true,
             "min_plugin": "1.6.0"
         },
@@ -94,7 +94,7 @@
             ],
             "license": "MIT",
             "author": "1ShotWP",
-            "sha256": "aeedc23e28ebbcd3e53fde67076e88f1a5630bb451632c3f973fca9b280b9580",
+            "sha256": "9d1da5538059762764701c8024424710df4520db57c0adef9fd8e8fc305fe12a",
             "signed": true,
             "min_plugin": "1.6.0"
         },
@@ -110,7 +110,7 @@
             ],
             "license": "MIT",
             "author": "1ShotWP",
-            "sha256": "8a8f6ceab9b8100d9254e2beb877438105457cfb2f1d0f339b0abeeed9f914b6",
+            "sha256": "80bb19cd07273eb871df054f52847bffe8342ee0d82936f14815962f6a9a3448",
             "signed": true,
             "min_plugin": "1.6.0"
         },
@@ -125,7 +125,7 @@
             ],
             "license": "MIT",
             "author": "1ShotWP",
-            "sha256": "4b8aca4d4bf2d7628e73926b7d6b5eea84d6425b46d5107e10b826a97409b5a3",
+            "sha256": "d88a22ecd4569ce53175b380c927cba0c590fd155089ec8dcc74aa47ae6c3c4b",
             "signed": true,
             "min_plugin": "1.6.0"
         },
@@ -141,7 +141,7 @@
             ],
             "license": "MIT",
             "author": "1ShotWP",
-            "sha256": "3523b3fe0a98d356f04ead7cea5eab6b77f1568a4f3e8bef42b037f05078b2ec",
+            "sha256": "39a2a841c9c03e9fc9adc4fba6ceb73e1461fbf82d0bf648789d9265bf116361",
             "signed": true,
             "min_plugin": "1.6.0"
         },
@@ -156,7 +156,7 @@
             ],
             "license": "MIT",
             "author": "1ShotWP",
-            "sha256": "04c414c10dc532507874b84b5de1c6db1d95e0e516b7d9f6697b7535ab723847",
+            "sha256": "d71162b77d9033efd9875b3ccde33ca93d161347a5052f9c2b3e9e3432a975db",
             "signed": true,
             "min_plugin": "1.6.0"
         },
@@ -172,7 +172,7 @@
             ],
             "license": "MIT",
             "author": "1ShotWP",
-            "sha256": "b99322083fdc168774e9597a01021db57a7217847c952f151f0c988689133222",
+            "sha256": "c91ae836943c26b331231ad6db21b2116f268b36de06e8554370c6e57edc0129",
             "signed": true,
             "min_plugin": "1.6.0"
         },
@@ -187,7 +187,7 @@
             ],
             "license": "MIT",
             "author": "1ShotWP",
-            "sha256": "96856d785d66cbd4c44f0fc3cf1646bcb32a88fd9ac4d07b4f8455b53422d004",
+            "sha256": "bd063481caf3920fe38028c457272b0d7f2deeaab9df7678562aa69625b90202",
             "signed": true,
             "min_plugin": "1.6.0"
         },
@@ -203,7 +203,7 @@
             ],
             "license": "MIT",
             "author": "1ShotWP",
-            "sha256": "591da55fb5a85dc41ab98ab6641e3646e9c52ecd6d5f072baa22a468da5a6a3a",
+            "sha256": "6e88e6597869e2ebf67f78661f037b86fc8f00c5d03544ca01d99119af6690c7",
             "signed": true,
             "min_plugin": "1.6.0"
         },
@@ -219,7 +219,7 @@
             ],
             "license": "MIT",
             "author": "1ShotWP",
-            "sha256": "b7a476ce8bd485ac8e3ad2bbe4453c0d2131d15b6617911bbe1be5f72946debb",
+            "sha256": "e4254a389027b56a538f9a15c739097b306012348ede4d0ff9cf0b3b3e6f6ffc",
             "signed": true,
             "min_plugin": "1.6.0"
         },
@@ -234,7 +234,7 @@
             ],
             "license": "MIT",
             "author": "1ShotWP",
-            "sha256": "3707f3b843ef9be770e4900753cc4fca5afa21af8e624baf82c5bdbb68fc2544",
+            "sha256": "750e9281245e059b43ef1fec24bcb5b50d3626abbc77c3d9eb3c4fb47ad4d6be",
             "signed": true,
             "min_plugin": "1.6.0"
         }

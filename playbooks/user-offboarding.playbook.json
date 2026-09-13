@@ -66,5 +66,5 @@
         "wp_delete_user requires an explicit reassign target: refuse to run it bare.",
         "Never offboard user id 1 or the last administrator: the tools will refuse, do not try to work around them."
     ],
-    "signature": "Sa66fuFiyfbS0WOg1dYFG4XDUYm9ITXXlvPYPRDREUOx/omhWyMsq3iKZkAjbvj0VGcLmu0RJG7KYZeb+nQrDQ=="
+    "signature": "eWA/JuwN6NKkqoT9h1suqETK69oba7c7JQlx79DHbEKY9qYuxfXGI/ikZZHiVWt6/Gec/oUVf0F6rjFD+AvoDA=="
 }
