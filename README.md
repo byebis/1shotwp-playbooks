@@ -18,9 +18,14 @@ wp_get_skill         id=seo-audit-pro
 
 ## Contribute a playbook
 
-1. Fork, add `playbooks/<id>.playbook.json` (validate locally: `python3 ci/validate.py`).
-2. Sign it with your own key if you like — unsigned submissions install flagged `verified=false`.
-3. Open a PR: CI validates schema, sha256 pins and signatures. The community reviews the STEPS (tools, guardrails, ordering).
-4. After merge, the catalog updates for every 1ShotWP site on the next `wp_playbook_list_remote`.
+The fast path needs no JSON editor: author the playbook on your own site with
+`wp_playbook_author`, test it, then `wp_playbook_submit` packages the exact file, the
+`registry.json` entry and a ready PR for you. Hand-written submissions are equally welcome.
+
+1. Read the [contributing guide](CONTRIBUTING.md) (document rules, trust tiers, review priorities).
+2. Fork, add `playbooks/<id>.playbook.json` **and** append the `registry.json` entry (`"signed": false` for community submissions; sha256 must match the exact file bytes).
+3. Validate locally: `python3 ci/validate.py`.
+4. Open a PR: CI validates structure, sha256 pins and signatures. The community reviews the STEPS (tools, guardrails, ordering).
+5. After merge, the catalog updates for every 1ShotWP site on the next `wp_playbook_list_remote`, and the public [catalog page](https://byebis.github.io/1shotwp-playbooks/) regenerates automatically.
 
 License: each playbook carries its own SPDX license id (official ones: MIT).

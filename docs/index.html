@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1ShotWP Playbooks — signed, agent-run playbooks for WordPress (15 available)</title>
+<meta name="description" content="The official registry of 15 signed JSON playbooks for 1ShotWP, the self-hosted MCP server for WordPress. Every playbook is sha256-pinned, tool-checked at install and executed step by step through the normal safety stack. Install them with one tool call.">
+<link rel="canonical" href="https://byebis.github.io/1shotwp-playbooks/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="1ShotWP Playbooks — the signed playbook registry for WordPress AI agents">
+<meta property="og:description" content="15 signed JSON playbooks (SEO audit, WooCommerce launch, GDPR, speed pass…) for the self-hosted MCP server for WordPress. sha256-pinned, Ed25519-signed, zero servers.">
+<meta property="og:url" content="https://byebis.github.io/1shotwp-playbooks/">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ItemList", "name": "1ShotWP Playbooks registry", "numberOfItems": 15, "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@type": "SoftwareSourceCode", "name": "Accessibility pass", "description": "A practical a11y baseline: global styles contrast review, image alt-text coverage, heading structure spot-check on key pages, and safe fixes.", "version": "1.0.0", "license": "MIT", "programmingLanguage": "JSON", "author": {"@type": "Organization", "name": "1ShotWP"}, "downloadUrl": "https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/accessibility-pass.playbook.json"}}, {"@type": "ListItem", "position": 2, "item": {"@type": "SoftwareSourceCode", "name": "Backup drill", "description": "Prove reversibility before you need it: snapshot, checkpoint, a reversible change, verify the journal, and rehearse the restore path.", "version": "1.0.0", "license": "MIT", "programmingLanguage": "JSON", "author": {"@type": "Organization", "name": "1ShotWP"}, "downloadUrl": "https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/backup-drill.playbook.json"}}, {"@type": "ListItem", "position": 3, "item": {"@type": "SoftwareSourceCode", "name": "Broken links sweep", "description": "Scan for broken links, fix internal ones in place, and add 301 redirects for moved URLs instead of editing external targets.", "version": "1.0.0", "license": "MIT", "programmingLanguage": "JSON", "author": {"@type": "Organization", "name": "1ShotWP"}, "downloadUrl": "https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/broken-links-sweep.playbook.json"}}, {"@type": "ListItem", "position": 4, "item": {"@type": "SoftwareSourceCode", "name": "Comment spam purge", "description": "Measure the spam backlog, purge it reversibly (spam flag, never hard delete), then harden the comment settings so the backlog does not rebuild.", "version": "1.0.0", "license": "MIT", "programmingLanguage": "JSON", "author": {"@type": "Organization", "name": "1ShotWP"}, "downloadUrl": "https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/comment-spam-purge.playbook.json"}}, {"@type": "ListItem", "position": 5, "item": {"@type": "SoftwareSourceCode", "name": "Stale content refresh", "description": "Find the oldest still-relevant published posts, refresh facts and dates where safe, and leave an audit trail via a checkpoint before writing.", "version": "1.0.0", "license": "MIT", "programmingLanguage": "JSON", "author": {"@type": "Organization", "name": "1ShotWP"}, "downloadUrl": "https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/content-refresh.playbook.json"}}, {"@type": "ListItem", "position": 6, "item": {"@type": "SoftwareSourceCode", "name": "Email deliverability check", "description": "Make transactional email trustworthy: admin email sanity, test message, plugin-based SMTP detection, notification inventory.", "version": "1.0.0", "license": "MIT", "programmingLanguage": "JSON", "author": {"@type": "Organization", "name": "1ShotWP"}, "downloadUrl": "https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/email-deliverability.playbook.json"}}, {"@type": "ListItem", "position": 7, "item": {"@type": "SoftwareSourceCode", "name": "GDPR / privacy pass", "description": "Privacy baseline: privacy policy page present, comment settings conservative, user inventory, and a moderation sweep of pending items.", "version": "1.0.0", "license": "MIT", "programmingLanguage": "JSON", "author": {"@type": "Organization", "name": "1ShotWP"}, "downloadUrl": "https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/gdpr-privacy-pass.playbook.json"}}, {"@type": "ListItem", "position": 8, "item": {"@type": "SoftwareSourceCode", "name": "Multilingual starter", "description": "Prepare a site for two languages: language inventory, per-post language assignment, translation linking, and a duplicated menu structure check.", "version": "1.0.0", "license": "MIT", "programmingLanguage": "JSON", "author": {"@type": "Organization", "name": "1ShotWP"}, "downloadUrl": "https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/multilang-setup.playbook.json"}}, {"@type": "ListItem", "position": 9, "item": {"@type": "SoftwareSourceCode", "name": "Plugin vulnerability triage", "description": "Inventory every installed plugin, flag abandoned or inactive ones, apply pending updates with a checkpoint, and probe for conflicts after updating.", "version": "1.0.0", "license": "MIT", "programmingLanguage": "JSON", "author": {"@type": "Organization", "name": "1ShotWP"}, "downloadUrl": "https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/plugin-vulnerability-triage.playbook.json"}}, {"@type": "ListItem", "position": 10, "item": {"@type": "SoftwareSourceCode", "name": "SEO audit (pro)", "description": "Full SEO health check: which SEO plugin is live, sitemap reachable, per-post title/description quality on the most important pages, and fixes applied only where the owner asked.", "version": "1.0.0", "license": "MIT", "programmingLanguage": "JSON", "author": {"@type": "Organization", "name": "1ShotWP"}, "downloadUrl": "https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/seo-audit-pro.playbook.json"}}, {"@type": "ListItem", "position": 11, "item": {"@type": "SoftwareSourceCode", "name": "Speed pass", "description": "Performance hygiene without third-party claims: media sizes complete, unused media listed, transient garbage collected, cron queue sane, core/plugins up to date, Site Health clean.", "version": "1.0.0", "license": "MIT", "programmingLanguage": "JSON", "author": {"@type": "Organization", "name": "1ShotWP"}, "downloadUrl": "https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/speed-pass.playbook.json"}}, {"@type": "ListItem", "position": 12, "item": {"@type": "SoftwareSourceCode", "name": "Staging to production content promotion", "description": "Promote reviewed content changes: verify the production snapshot, apply the agreed edits, sweep dev URLs out, and keep the journal as the rollback path.", "version": "1.0.0", "license": "MIT", "programmingLanguage": "JSON", "author": {"@type": "Organization", "name": "1ShotWP"}, "downloadUrl": "https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/staging-to-prod-content.playbook.json"}}, {"@type": "ListItem", "position": 13, "item": {"@type": "SoftwareSourceCode", "name": "User offboarding (safe)", "description": "Remove a person's access without destroying their work: sessions killed, content reassigned, role downgraded or user deleted with explicit reassignment targets.", "version": "1.0.0", "license": "MIT", "programmingLanguage": "JSON", "author": {"@type": "Organization", "name": "1ShotWP"}, "downloadUrl": "https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/user-offboarding.playbook.json"}}, {"@type": "ListItem", "position": 14, "item": {"@type": "SoftwareSourceCode", "name": "WooCommerce catalog audit", "description": "Shop health: system status, product inventory and gaps, review queue, coupon usage sanity, out-of-stock list and order pipeline counts.", "version": "1.0.0", "license": "MIT", "programmingLanguage": "JSON", "author": {"@type": "Organization", "name": "1ShotWP"}, "downloadUrl": "https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/woo-catalog-audit.playbook.json"}}, {"@type": "ListItem", "position": 15, "item": {"@type": "SoftwareSourceCode", "name": "WooCommerce first-sale readiness", "description": "Pre-launch shop check: payment gateway live, shipping zone present, tax class sane, first product complete, welcome coupon tested, order pipeline dry-run.", "version": "1.0.0", "license": "MIT", "programmingLanguage": "JSON", "author": {"@type": "Organization", "name": "1ShotWP"}, "downloadUrl": "https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/woo-launch-check.playbook.json"}}]}
+</script>
+<style>
+:root { color-scheme: light dark; }
+body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; max-width: 62rem; margin: 0 auto; padding: 1.2rem; line-height: 1.5; }
+header p.lead { font-size: 1.05rem; }
+.badge { display: inline-block; font-size: .72rem; padding: .1rem .5rem; border-radius: 999px; vertical-align: middle; }
+.badge.signed { background: #1a7f37; color: #fff; }
+.badge.community { background: #6e7781; color: #fff; }
+.card { border: 1px solid #8884; border-radius: 10px; padding: .9rem 1.1rem; margin: 1rem 0; }
+.card h2 { margin: .1rem 0 .4rem; font-size: 1.15rem; }
+.desc { margin: .2rem 0; }
+.meta { color: #77717e; font-size: .86rem; margin: .3rem 0; }
+.tags { margin: .4rem 0; }
+.tag { display: inline-block; background: #7b68ee22; border-radius: 6px; padding: .05rem .45rem; margin-right: .3rem; font-size: .8rem; }
+pre { background: #8881; padding: .5rem .7rem; border-radius: 8px; overflow-x: auto; }
+footer { margin-top: 2rem; color: #77717e; font-size: .85rem; }
+a { color: #0969da; }
+</style>
+</head>
+<body>
+<header>
+  <h1>1ShotWP Playbooks — the signed playbook registry for WordPress AI agents</h1>
+  <p class="lead">Guided, agent-run jobs for WordPress distributed as <strong>signed JSON documents, never executable code</strong>: SEO audit, WooCommerce launch, GDPR privacy pass, speed pass, content refresh and more. Every file is sha256-pinned in <a href="https://github.com/byebis/1shotwp-playbooks/blob/main/registry.json">registry.json</a>, official playbooks carry an Ed25519 signature, and every referenced tool is checked against <em>your</em> site at install. Install ≠ run: the agent executes each step through the normal safety stack (capabilities, approval queue, undo journal).</p>
+  <p><strong>15 playbooks</strong> available · registry updated <time datetime="2026-09-13T08:57:32+00:00">2026-09-13</time></p>
+</header>
+<main>
+    <article class="card" id="accessibility-pass">
+      <h2>Accessibility pass <span class="badge signed" title="Ed25519 signature verified against the pinned publisher key">signed</span></h2>
+      <p class="desc">A practical a11y baseline: global styles contrast review, image alt-text coverage, heading structure spot-check on key pages, and safe fixes.</p>
+      <p class="meta">v1.0.0 · by 1ShotWP · license MIT · sha256 <code>80bb19cd0727…</code></p>
+      <div class="tags"><span class="tag">accessibility</span><span class="tag">content</span><span class="tag">media</span></div>
+      <details>
+        <summary>How to install</summary>
+        <pre>wp_playbook_install id=accessibility-pass</pre>
+        <p>Requires the <a href="https://github.com/byebis/1shotwp">1ShotWP</a> plugin (self-hosted MCP for WordPress).</p>
+      </details>
+      <p class="dl"><a href="https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/accessibility-pass.playbook.json" rel="nofollow">Download the signed JSON document</a></p>
+    </article>
+    <article class="card" id="backup-drill">
+      <h2>Backup drill <span class="badge signed" title="Ed25519 signature verified against the pinned publisher key">signed</span></h2>
+      <p class="desc">Prove reversibility before you need it: snapshot, checkpoint, a reversible change, verify the journal, and rehearse the restore path.</p>
+      <p class="meta">v1.0.0 · by 1ShotWP · license MIT · sha256 <code>cc4ef21cd595…</code></p>
+      <div class="tags"><span class="tag">backup</span><span class="tag">recovery</span><span class="tag">maintenance</span></div>
+      <details>
+        <summary>How to install</summary>
+        <pre>wp_playbook_install id=backup-drill</pre>
+        <p>Requires the <a href="https://github.com/byebis/1shotwp">1ShotWP</a> plugin (self-hosted MCP for WordPress).</p>
+      </details>
+      <p class="dl"><a href="https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/backup-drill.playbook.json" rel="nofollow">Download the signed JSON document</a></p>
+    </article>
+    <article class="card" id="broken-links-sweep">
+      <h2>Broken links sweep <span class="badge signed" title="Ed25519 signature verified against the pinned publisher key">signed</span></h2>
+      <p class="desc">Scan for broken links, fix internal ones in place, and add 301 redirects for moved URLs instead of editing external targets.</p>
+      <p class="meta">v1.0.0 · by 1ShotWP · license MIT · sha256 <code>6e88e6597869…</code></p>
+      <div class="tags"><span class="tag">content</span><span class="tag">seo</span><span class="tag">links</span></div>
+      <details>
+        <summary>How to install</summary>
+        <pre>wp_playbook_install id=broken-links-sweep</pre>
+        <p>Requires the <a href="https://github.com/byebis/1shotwp">1ShotWP</a> plugin (self-hosted MCP for WordPress).</p>
+      </details>
+      <p class="dl"><a href="https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/broken-links-sweep.playbook.json" rel="nofollow">Download the signed JSON document</a></p>
+    </article>
+    <article class="card" id="comment-spam-purge">
+      <h2>Comment spam purge <span class="badge signed" title="Ed25519 signature verified against the pinned publisher key">signed</span></h2>
+      <p class="desc">Measure the spam backlog, purge it reversibly (spam flag, never hard delete), then harden the comment settings so the backlog does not rebuild.</p>
+      <p class="meta">v1.0.0 · by 1ShotWP · license MIT · sha256 <code>c91ae836943c…</code></p>
+      <div class="tags"><span class="tag">comments</span><span class="tag">spam</span><span class="tag">maintenance</span></div>
+      <details>
+        <summary>How to install</summary>
+        <pre>wp_playbook_install id=comment-spam-purge</pre>
+        <p>Requires the <a href="https://github.com/byebis/1shotwp">1ShotWP</a> plugin (self-hosted MCP for WordPress).</p>
+      </details>
+      <p class="dl"><a href="https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/comment-spam-purge.playbook.json" rel="nofollow">Download the signed JSON document</a></p>
+    </article>
+    <article class="card" id="content-refresh">
+      <h2>Stale content refresh <span class="badge signed" title="Ed25519 signature verified against the pinned publisher key">signed</span></h2>
+      <p class="desc">Find the oldest still-relevant published posts, refresh facts and dates where safe, and leave an audit trail via a checkpoint before writing.</p>
+      <p class="meta">v1.0.0 · by 1ShotWP · license MIT · sha256 <code>d88a22ecd456…</code></p>
+      <div class="tags"><span class="tag">content</span><span class="tag">maintenance</span></div>
+      <details>
+        <summary>How to install</summary>
+        <pre>wp_playbook_install id=content-refresh</pre>
+        <p>Requires the <a href="https://github.com/byebis/1shotwp">1ShotWP</a> plugin (self-hosted MCP for WordPress).</p>
+      </details>
+      <p class="dl"><a href="https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/content-refresh.playbook.json" rel="nofollow">Download the signed JSON document</a></p>
+    </article>
+    <article class="card" id="email-deliverability">
+      <h2>Email deliverability check <span class="badge signed" title="Ed25519 signature verified against the pinned publisher key">signed</span></h2>
+      <p class="desc">Make transactional email trustworthy: admin email sanity, test message, plugin-based SMTP detection, notification inventory.</p>
+      <p class="meta">v1.0.0 · by 1ShotWP · license MIT · sha256 <code>cbb7056ac54e…</code></p>
+      <div class="tags"><span class="tag">email</span><span class="tag">diagnostics</span></div>
+      <details>
+        <summary>How to install</summary>
+        <pre>wp_playbook_install id=email-deliverability</pre>
+        <p>Requires the <a href="https://github.com/byebis/1shotwp">1ShotWP</a> plugin (self-hosted MCP for WordPress).</p>
+      </details>
+      <p class="dl"><a href="https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/email-deliverability.playbook.json" rel="nofollow">Download the signed JSON document</a></p>
+    </article>
+    <article class="card" id="gdpr-privacy-pass">
+      <h2>GDPR / privacy pass <span class="badge signed" title="Ed25519 signature verified against the pinned publisher key">signed</span></h2>
+      <p class="desc">Privacy baseline: privacy policy page present, comment settings conservative, user inventory, and a moderation sweep of pending items.</p>
+      <p class="meta">v1.0.0 · by 1ShotWP · license MIT · sha256 <code>39a2a841c9c0…</code></p>
+      <div class="tags"><span class="tag">privacy</span><span class="tag">compliance</span><span class="tag">comments</span></div>
+      <details>
+        <summary>How to install</summary>
+        <pre>wp_playbook_install id=gdpr-privacy-pass</pre>
+        <p>Requires the <a href="https://github.com/byebis/1shotwp">1ShotWP</a> plugin (self-hosted MCP for WordPress).</p>
+      </details>
+      <p class="dl"><a href="https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/gdpr-privacy-pass.playbook.json" rel="nofollow">Download the signed JSON document</a></p>
+    </article>
+    <article class="card" id="multilang-setup">
+      <h2>Multilingual starter <span class="badge signed" title="Ed25519 signature verified against the pinned publisher key">signed</span></h2>
+      <p class="desc">Prepare a site for two languages: language inventory, per-post language assignment, translation linking, and a duplicated menu structure check.</p>
+      <p class="meta">v1.0.0 · by 1ShotWP · license MIT · sha256 <code>750e9281245e…</code></p>
+      <div class="tags"><span class="tag">i18n</span><span class="tag">content</span></div>
+      <details>
+        <summary>How to install</summary>
+        <pre>wp_playbook_install id=multilang-setup</pre>
+        <p>Requires the <a href="https://github.com/byebis/1shotwp">1ShotWP</a> plugin (self-hosted MCP for WordPress).</p>
+      </details>
+      <p class="dl"><a href="https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/multilang-setup.playbook.json" rel="nofollow">Download the signed JSON document</a></p>
+    </article>
+    <article class="card" id="plugin-vulnerability-triage">
+      <h2>Plugin vulnerability triage <span class="badge signed" title="Ed25519 signature verified against the pinned publisher key">signed</span></h2>
+      <p class="desc">Inventory every installed plugin, flag abandoned or inactive ones, apply pending updates with a checkpoint, and probe for conflicts after updating.</p>
+      <p class="meta">v1.0.0 · by 1ShotWP · license MIT · sha256 <code>e4254a389027…</code></p>
+      <div class="tags"><span class="tag">security</span><span class="tag">plugins</span><span class="tag">maintenance</span></div>
+      <details>
+        <summary>How to install</summary>
+        <pre>wp_playbook_install id=plugin-vulnerability-triage</pre>
+        <p>Requires the <a href="https://github.com/byebis/1shotwp">1ShotWP</a> plugin (self-hosted MCP for WordPress).</p>
+      </details>
+      <p class="dl"><a href="https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/plugin-vulnerability-triage.playbook.json" rel="nofollow">Download the signed JSON document</a></p>
+    </article>
+    <article class="card" id="seo-audit-pro">
+      <h2>SEO audit (pro) <span class="badge signed" title="Ed25519 signature verified against the pinned publisher key">signed</span></h2>
+      <p class="desc">Full SEO health check: which SEO plugin is live, sitemap reachable, per-post title/description quality on the most important pages, and fixes applied only where the owner asked.</p>
+      <p class="meta">v1.0.0 · by 1ShotWP · license MIT · sha256 <code>833988accc39…</code></p>
+      <div class="tags"><span class="tag">seo</span><span class="tag">audit</span><span class="tag">content</span></div>
+      <details>
+        <summary>How to install</summary>
+        <pre>wp_playbook_install id=seo-audit-pro</pre>
+        <p>Requires the <a href="https://github.com/byebis/1shotwp">1ShotWP</a> plugin (self-hosted MCP for WordPress).</p>
+      </details>
+      <p class="dl"><a href="https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/seo-audit-pro.playbook.json" rel="nofollow">Download the signed JSON document</a></p>
+    </article>
+    <article class="card" id="speed-pass">
+      <h2>Speed pass <span class="badge signed" title="Ed25519 signature verified against the pinned publisher key">signed</span></h2>
+      <p class="desc">Performance hygiene without third-party claims: media sizes complete, unused media listed, transient garbage collected, cron queue sane, core/plugins up to date, Site Health clean.</p>
+      <p class="meta">v1.0.0 · by 1ShotWP · license MIT · sha256 <code>d71162b77d90…</code></p>
+      <div class="tags"><span class="tag">performance</span><span class="tag">maintenance</span></div>
+      <details>
+        <summary>How to install</summary>
+        <pre>wp_playbook_install id=speed-pass</pre>
+        <p>Requires the <a href="https://github.com/byebis/1shotwp">1ShotWP</a> plugin (self-hosted MCP for WordPress).</p>
+      </details>
+      <p class="dl"><a href="https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/speed-pass.playbook.json" rel="nofollow">Download the signed JSON document</a></p>
+    </article>
+    <article class="card" id="staging-to-prod-content">
+      <h2>Staging to production content promotion <span class="badge signed" title="Ed25519 signature verified against the pinned publisher key">signed</span></h2>
+      <p class="desc">Promote reviewed content changes: verify the production snapshot, apply the agreed edits, sweep dev URLs out, and keep the journal as the rollback path.</p>
+      <p class="meta">v1.0.0 · by 1ShotWP · license MIT · sha256 <code>9d1da5538059…</code></p>
+      <div class="tags"><span class="tag">deployment</span><span class="tag">content</span></div>
+      <details>
+        <summary>How to install</summary>
+        <pre>wp_playbook_install id=staging-to-prod-content</pre>
+        <p>Requires the <a href="https://github.com/byebis/1shotwp">1ShotWP</a> plugin (self-hosted MCP for WordPress).</p>
+      </details>
+      <p class="dl"><a href="https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/staging-to-prod-content.playbook.json" rel="nofollow">Download the signed JSON document</a></p>
+    </article>
+    <article class="card" id="user-offboarding">
+      <h2>User offboarding (safe) <span class="badge signed" title="Ed25519 signature verified against the pinned publisher key">signed</span></h2>
+      <p class="desc">Remove a person&#x27;s access without destroying their work: sessions killed, content reassigned, role downgraded or user deleted with explicit reassignment targets.</p>
+      <p class="meta">v1.0.0 · by 1ShotWP · license MIT · sha256 <code>bd063481caf3…</code></p>
+      <div class="tags"><span class="tag">users</span><span class="tag">security</span></div>
+      <details>
+        <summary>How to install</summary>
+        <pre>wp_playbook_install id=user-offboarding</pre>
+        <p>Requires the <a href="https://github.com/byebis/1shotwp">1ShotWP</a> plugin (self-hosted MCP for WordPress).</p>
+      </details>
+      <p class="dl"><a href="https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/user-offboarding.playbook.json" rel="nofollow">Download the signed JSON document</a></p>
+    </article>
+    <article class="card" id="woo-catalog-audit">
+      <h2>WooCommerce catalog audit <span class="badge signed" title="Ed25519 signature verified against the pinned publisher key">signed</span></h2>
+      <p class="desc">Shop health: system status, product inventory and gaps, review queue, coupon usage sanity, out-of-stock list and order pipeline counts.</p>
+      <p class="meta">v1.0.0 · by 1ShotWP · license MIT · sha256 <code>b21ce0077f68…</code></p>
+      <div class="tags"><span class="tag">woocommerce</span><span class="tag">audit</span><span class="tag">shop</span></div>
+      <details>
+        <summary>How to install</summary>
+        <pre>wp_playbook_install id=woo-catalog-audit</pre>
+        <p>Requires the <a href="https://github.com/byebis/1shotwp">1ShotWP</a> plugin (self-hosted MCP for WordPress).</p>
+      </details>
+      <p class="dl"><a href="https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/woo-catalog-audit.playbook.json" rel="nofollow">Download the signed JSON document</a></p>
+    </article>
+    <article class="card" id="woo-launch-check">
+      <h2>WooCommerce first-sale readiness <span class="badge signed" title="Ed25519 signature verified against the pinned publisher key">signed</span></h2>
+      <p class="desc">Pre-launch shop check: payment gateway live, shipping zone present, tax class sane, first product complete, welcome coupon tested, order pipeline dry-run.</p>
+      <p class="meta">v1.0.0 · by 1ShotWP · license MIT · sha256 <code>f0682c9978e4…</code></p>
+      <div class="tags"><span class="tag">woocommerce</span><span class="tag">launch</span><span class="tag">shop</span></div>
+      <details>
+        <summary>How to install</summary>
+        <pre>wp_playbook_install id=woo-launch-check</pre>
+        <p>Requires the <a href="https://github.com/byebis/1shotwp">1ShotWP</a> plugin (self-hosted MCP for WordPress).</p>
+      </details>
+      <p class="dl"><a href="https://raw.githubusercontent.com/byebis/1shotwp-playbooks/main/playbooks/woo-launch-check.playbook.json" rel="nofollow">Download the signed JSON document</a></p>
+    </article>
+</main>
+<footer>
+  <p>Distributed with a zero-server model: this registry is a static Git repository — no accounts, no telemetry, no phone-home. Contribute your own playbook via the <a href="https://github.com/byebis/1shotwp-playbooks/blob/main/CONTRIBUTING.md">contributing guide</a> (author it on your site with <code>wp_playbook_author</code>, package it with <code>wp_playbook_submit</code>, open a PR).</p>
+  <p><a href="https://github.com/byebis/1shotwp">1ShotWP</a> — self-hosted MCP (Model Context Protocol) server for WordPress · registry format <code>1shotwp-playbook-registry/1</code></p>
+</footer>
+</body>
+</html>
