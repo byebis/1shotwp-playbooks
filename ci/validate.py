@@ -10,11 +10,14 @@ private keys never touch this repository):
                                  in the maintainer-environment reset of
                                  2026-09; its signatures stay valid forever
                                  against the pinned public half)
-  keys/1shotwp-playbooks-v2.pub  k2 — active signing generation since
-                                 1ShotWP 1.6.2 "Zecca" (used for every NEW
-                                 official playbook and promotion)
+  keys/1shotwp-playbooks-v2.pub  k2 — generation introduced by 1ShotWP 1.6.2
+                                 "Zecca" (its private half was lost in a
+                                 second reset before anything official was
+                                 signed with it)
+  keys/1shotwp-playbooks-v3.pub  k3 — ACTIVE signing generation (used for
+                                 every NEW official playbook and promotion)
 
-An entry may declare `key_id` (k1/k2/k-<fingerprint>); when present it must
+An entry may declare `key_id` (k1/k2/k3/k-<fingerprint>); when present it must
 match the key whose signature verifies. registry.json may declare a
 `public_keys` map {key_id: base64-pubkey} for documentation; any key listed
 there must decode to 32 raw bytes.
@@ -25,11 +28,12 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PUBS = {
     'k1': os.path.join(ROOT, 'keys', '1shotwp-playbooks.pub'),
     'k2': os.path.join(ROOT, 'keys', '1shotwp-playbooks-v2.pub'),
+    'k3': os.path.join(ROOT, 'keys', '1shotwp-playbooks-v3.pub'),
 }
 ID_RE = r'^[a-z0-9][a-z0-9-]{1,62}$'
 SEMVER_RE = r'^\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.\-]+)?$'
 SLUG_RE = r'^[a-z0-9-]{1,30}$'
-KEYID_RE = r'^k1$|^k2$|^k-[0-9a-f]{8}$'
+KEYID_RE = r'^k1$|^k2$|^k3$|^k-[0-9a-f]{8}$'
 
 def canonical(doc):
     def clean(o):
